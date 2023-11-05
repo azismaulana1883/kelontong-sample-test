@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import '../assets/css/landing-page.css'
 import { Link } from 'react-router-dom';
+import imgLogo from '../assets/img/logo.jpeg'
 
 function Login() {
 useEffect(() => {
@@ -17,7 +18,9 @@ useEffect(() => {
           <div className="col-12 text-center">
             <h1 className="text-primary fw-bold text-decoration-none pt-5">
               <Link to="/">
-                <a>Kelontong</a>
+            <a className="navbar-brand" href="#">
+                <img src={imgLogo} alt="Kelontong" width="300" height="150"/>
+            </a>
               </Link>
             </h1>
           </div>
