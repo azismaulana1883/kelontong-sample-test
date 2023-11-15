@@ -16,15 +16,28 @@ const getProductList = async () => {
     }
 }
 
-const login = async (username,password) => {
+const login = async (username, password) => {
     try {
         const url_login = `${BASE_URL_API_LOGIN}`;
         const response = await axios.post(url_login, { username, password });
         return response.data;
     } catch (error) {
-        console.log(error);
+        if (error.response) {
+            // Tangkap status code dari respon yang diterima
+            const statusCode = error.response.status;
+            console.log(`HTTP status code: ${statusCode}`);
+
+            // Tangkap pesan error jika ada
+            const errorMessage = error.response.data.message;
+            console.log(`Error message: ${errorMessage}`);
+        } else {
+            console.log('Error:', error.message);
+        }
+
+        // Dilemparkan kembali agar dapat dihandle di komponen yang memanggil fungsi login
+        throw error;
     }
-}
+};
 
 export {
 getProductList,

@@ -13,7 +13,7 @@ function Navbar() {
                 <div className="col-lg-3 col-md-3 col-sm-12 ps-5">
                   <Link to="/">
                   <a className="navbar-brand text-primary fw-bold">
-                    <img src="logo.png" alt="Kelontong" />
+                    <img alt="Kelontong" />
                   </a>
                   </Link>
                 </div>

@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 import Swal from 'sweetalert2';
 import NavbarLogin from '../components/NavbarLogin';
 
-function Login() {
+function LoginOwner() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -63,7 +63,7 @@ function Login() {
               </div>
 
             <NavbarLogin/>
-
+          
               <form onSubmit={handleLogin}>
                 <div className="container">
                   <div className="row justify-content-center">
@@ -73,7 +73,7 @@ function Login() {
                           type="username"
                           className="form-control"
                           id="username"
-                          placeholder="Username User"
+                          placeholder="Username Owner"
                           required={true}
                           value={username}
                           onChange={(e) => setUsername(e.target.value)}
@@ -132,4 +132,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginOwner;
